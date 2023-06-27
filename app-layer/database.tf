@@ -4,6 +4,6 @@ resource "fly_app" "databaseApp" {
 }
 
 data "fly_app" "dbApp" {
-  name       = "kandyba-mysql"
-  depends_on = [fly_app.databaseApp]
+  name = fly_app.databaseApp.name
+  #depends_on = [fly_app.databaseApp]
 }
